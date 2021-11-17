@@ -19,4 +19,42 @@ public class Terminal {
         parser.parse(temp);
         System.out.println("done");
     }
+    public void echo(String[] args)
+    {
+    	System.out.println(args);
+    }
+     public  void pwd(){
+    	 // System Property
+        
+            String userDirectory = System.getProperty("user.dir");
+            System.out.println(userDirectory);
+     }
+
+     public  void Is() throws IOException
+     {
+    	 
+    	 String userDirectory = System.getProperty("user.dir");
+         System.out.println(userDirectory);
+    	// creates a file object
+    	    File file = new File(userDirectory);
+
+    	 Files.list(Paths.get(userDirectory))
+      .sorted()
+      .forEach(System.out::println);
+
+     }
+     public void Touch(String dir,String name)
+     {
+     	//File file = new File(dir);
+     	String path = dir;  
+         path = path+name;  
+         //Instantiate the File class   
+         File f1 = new File(path);  
+         //Creating a folder using mkdir() method  
+         boolean bool = f1.mkdir();  
+         if(bool){  
+            System.out.println("Folder is created successfully");  
+         }else{  
+            System.out.println("Error Found!");  
+         }  
 }
