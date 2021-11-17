@@ -4,9 +4,18 @@ public class Terminal {
     Parser parser;
     
     public void chooseCommandAction(){
-    
+    	String commendN=parser.getCommandName();
+    	String [] argument=parser.getArgs();
+    	System.out.println(commendN);
+    	switch(commendN)
+    	{
+    	case "pwd":
+    		pwd();
+    	case "echo":
+    		echo(argument);
+    	
+    	}
     }
-    
     /**
      * @param args the command line arguments
      */
